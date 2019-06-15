@@ -13,7 +13,11 @@
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => ['auth']], function(){
     Route::get('/', 'CoreController@index')->name('dashboard');
-    // Route::resource('/category', 'CategoryController', ['as'=>'admin']);
+    Route::get('/settings', 'CoreController@settings')->name('dashboard.settings');
+    Route::post('/settings/store', 'CoreController@store')->name('dashboard.settings.store');
+    Route::post('/settings/destroy', 'CoreController@destroy')->name('dashboard.settings.destroy');
+    Route::post('/settings/userdata', 'CoreController@userdata')->name('dashboard.user_data.store');
+    Route::get('/catalog', 'CoreController@catalog')->name('dashboard.catalog');
     // Route::resource('/manufacture', 'ManufactureController', ['as'=>'admin']);
     // Route::resource('/currency', 'CurrencyController', ['as'=>'admin']);
     // Route::resource('/unit', 'UnitController', ['as'=>'admin']);
