@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Customer;
+use App\Address;
+use App\AdrCity;
+use App\AdrStreetType;
+use App\AdrNumber;
+use App\AdrStreet;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -58,7 +63,17 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        $data = array (
+            'addresses' => Address::where('customer_id', $customer->id)->get(),
+            'cities' => AdrCity::get(),
+            'street_type' => AdrStreetType::get(),
+            'street' => AdrStreet::get(),
+            'number' => AdrNumber::get(),
+            'addr' => Address::get(),
+            'customer_id' => $customer->id
+        );
+        // dd($customer->id, $data);
+        return view('dashboard/address', $data);
     }
 
     /**

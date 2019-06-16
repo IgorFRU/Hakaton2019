@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Address;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AddressController extends Controller
 {
@@ -35,7 +36,11 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Address::create($request->all());
+
+        
+        
+        return redirect()->route('dashboard.customer.show', ['customer' => $request->customer_id])->with('success', 'Покупатель успешно добавлен');
     }
 
     /**

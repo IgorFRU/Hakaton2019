@@ -24,10 +24,12 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => [
     Route::resource('/customers', 'CustomerController')->names([
         'index' => 'dashboard.customer.index',
         'create' => 'dashboard.customer.create',
+        'show' => 'dashboard.customer.show',
         'store' => 'dashboard.customer.store'
     ]);
     Route::resource('/adresses', 'AddressController')->names([
-        'index' => 'dashboard.address.index'
+        'index' => 'dashboard.address.index',
+        'store' => 'dashboard.address.store'
     ]);
     // Route::resource('/currency', 'CurrencyController', ['as'=>'admin']);
     // Route::resource('/unit', 'UnitController', ['as'=>'admin']);

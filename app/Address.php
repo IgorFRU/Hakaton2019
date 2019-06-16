@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
+    protected $fillable = ['address', 'customer_id'];
+    
+    public $timestamps = false;
+
     public function city() {
         return $this->belongsTo(AdrCity::class);
     }
@@ -19,6 +23,6 @@ class Address extends Model
     }
 
     public function type() {
-        return $this->belongsTo(AdrType::class);
+        return $this->belongsTo(AdrStreetType::class);
     }
 }

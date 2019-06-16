@@ -20,6 +20,7 @@ class CreateAddressesTable extends Migration
             $table->integer('street_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->integer('number_id')->unsigned();
+            $table->string('address');
             $table->string('coordinate')->nullable();
         });
     }

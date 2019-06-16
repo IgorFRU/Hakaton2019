@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-            <div class="card-header">Покупатели <button type="button" class="btn btn-primary pull-right">Добавить</button></div>
+            <div class="card-header">Каталог товаров <button type="button" class="btn btn-primary pull-right">Добавить адрес</button></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,31 +17,34 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
                     <table class="table">
                             <thead>
                               <tr>                                  
                                 <th scope="col">#</th>
-                                <th scope="col">Наименование</th>
-                                <th scope="col">Управление</th>
+                                <th scope="col">Адрес</th>
                               </tr>
                             </thead>
                             <tbody>
                               
-                                @forelse ($customers as $customer)
-                                    <tr>
-                                        <th scope="row">{{ $count++ }}</th>                                          
-                                    <td><a href="{{ route('dashboard.customer.show', ['customer' => $customer->id]) }}">{{ $customer->customer }}</a></td>
-                                            <td><a href="#"><i class="fas fa-pencil-alt"></i></a>
-                                                <a href="#"><i class="fas fa-trash"></i></a></td>
-                                    </tr>
+                                @forelse ($addresses as $address)
+                                <tr>
+                                        <th scope="row">{{ $count++ }}</th>
+                                            <td>{{ $address->address }}</td>
+                                        </tr>
                                 @empty
-                                    нет покупателей
-                                @endforelse  
+                                    нет адресов
+                                @endforelse
+                                    
                                   
-                                  {{ $customers->links() }}
                               
                             </tbody>
                           </table>
+
+                          <form action="{{route('dashboard.address.store')}}" method="post">
+                                @csrf            
+                                @include('dashboard.partials.address_form')
+                            </form>
                     
                 </div>
             </div>
