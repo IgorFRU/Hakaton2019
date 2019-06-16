@@ -50,7 +50,15 @@ class AddressController extends Controller
             xml_parse_into_struct($p, $response, $vals, $index);
             xml_parser_free($p);
 
-            $coordinate = explode(' ', $vals[143]['value']);
+            // dd($vals);
+            $item = 0;
+            foreach ($vals as $key=>$value) {
+                
+                if ($value['tag'] == "POS") {
+                    $item = $key;
+                }
+            }
+            $coordinate = explode(' ', $vals[$item]['value']);
             $value = $coordinate[1].', '.$coordinate[0];
                 // dd($value);
 

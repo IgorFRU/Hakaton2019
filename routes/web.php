@@ -31,6 +31,9 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => [
         'index' => 'dashboard.address.index',
         'store' => 'dashboard.address.store'
     ]);
+    Route::get('/orders', 'OrderController@index')->name('dashboard.orders.index');
+    Route::get('/search', 'SearchController@index')->name('dashboard.search');
+    Route::get('/orders/{$id}', 'OrderController@show')->name('dashboard.orders.show');
     // Route::resource('/currency', 'CurrencyController', ['as'=>'admin']);
     // Route::resource('/unit', 'UnitController', ['as'=>'admin']);
     // Route::resource('/rebate', 'RebateController', ['as'=>'admin']);

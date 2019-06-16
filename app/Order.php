@@ -11,10 +11,17 @@ class Order extends Model
     
 
     public function customer() {
-        return $this->hasMany(Customer::class);
+        return $this->belongsTo(Customer::class);
     }
 
     public function good() {
         return $this->hasMany(Good::class);
     }
+
+    public function status() {
+        return $this->belongsTo(Status::class);
+    }
+    // public function customer() {
+    //     return $this->hasManyThrough(Customer::class, Address::class, 'customer_id');
+    // }
 }

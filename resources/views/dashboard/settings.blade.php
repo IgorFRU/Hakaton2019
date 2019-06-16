@@ -14,14 +14,17 @@
                         </div>
                     @endif
 
-                    <form action="{{route('dashboard.settings.store')}}" method="post">
-                        @csrf            
-                        @include('dashboard.partials.settings_form')
-                    </form>
-                    <form action="{{route('dashboard.settings.destroy')}}" method="post">
-                        @csrf            
-                        @include('dashboard.partials.settings_form_destroy')
-                    </form>
+                    <div class="row">
+                            <form action="{{route('dashboard.settings.store')}}" method="post">
+                                    @csrf            
+                                    @include('dashboard.partials.settings_form')
+                                </form>
+                                <form action="{{route('dashboard.settings.destroy')}}" method="post">
+                                    @csrf            
+                                    @include('dashboard.partials.settings_form_destroy')
+                                </form>
+                    </div>
+                    
                 </div>
             </div>
         </div>

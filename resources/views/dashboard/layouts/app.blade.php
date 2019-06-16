@@ -7,13 +7,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+    <title>КОНСОЛИДАТОР - Сервис управления торговлей</title>
 
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-  
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/babcd2c5a2.js"></script>
@@ -47,10 +48,19 @@
                 <a class="navbar-brand" href="{{ route('dashboard.customer.index') }}">
                     Покупатели
                 </a>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('dashboard.orders.index') }}">
                     Заказы
                 </a>
                 <a class="navbar-brand" href="{{ route('dashboard.settings') }}">Настройки</a>
+
+                <form action="{{route('dashboard.search')}}" method="get" class="col-md-4">
+                    {{-- @csrf             --}}
+                    <input type="search" name="search" class="form-control col-md-12" id="main_search" placeholder="поиск...">
+                {{-- <button type="button" class="btn btn-secondary">Поиск</button> --}}
+                {{-- <input type="submit" value="Поиск" class="btn btn-primary"> --}}
+                </form>
+
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Status extends Model
 {
-    protected $fillable = ['customer'];
-    
+    protected $fillable = ['status'];
+
     public $timestamps = false;
 
     public function order() {
