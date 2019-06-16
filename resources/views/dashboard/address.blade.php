@@ -23,6 +23,7 @@
                               <tr>                                  
                                 <th scope="col">#</th>
                                 <th scope="col">Адрес</th>
+                                <th>Координаты</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -31,6 +32,7 @@
                                 <tr>
                                         <th scope="row">{{ $count++ }}</th>
                                             <td>{{ $address->address }}</td>
+                                            <td>{{ $address->coordinate ?? ''}}</td>
                                         </tr>
                                 @empty
                                     нет адресов

@@ -13,9 +13,12 @@
             
             <tr>        
                     <td>
-                        <input type="text" name="address" id="">
+                        
+                        <input id="address" name="address" type="text">
+
                         <input type="hidden" name="customer_id" value="{{$customer_id}}">
                         <input type="submit" value="Добавить">
+
                         </td>
                     </tr>
                     

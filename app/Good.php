@@ -21,4 +21,8 @@ class Good extends Model
     public function manufacture() {
         return $this->belongsTo(Manufacture::class);
     }
+
+    public function order() {
+        return $this->belongsTo(Order::class);
+    }
 }

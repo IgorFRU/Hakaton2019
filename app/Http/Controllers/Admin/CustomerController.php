@@ -10,6 +10,7 @@ use App\AdrStreetType;
 use App\AdrNumber;
 use App\AdrStreet;
 use Illuminate\Http\Request;
+use Fomvasss\Dadata\Facades\DadataSuggest;
 
 class CustomerController extends Controller
 {
@@ -72,6 +73,9 @@ class CustomerController extends Controller
             'addr' => Address::get(),
             'customer_id' => $customer->id
         );
+
+        
+
         // dd($customer->id, $data);
         return view('dashboard/address', $data);
     }

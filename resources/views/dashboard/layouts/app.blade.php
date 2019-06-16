@@ -9,10 +9,17 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/babcd2c5a2.js"></script>
     <script src="https://use.fontawesome.com/564e0d687f.js"></script>
+
+   
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,6 +29,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
 </head>
 <body>
     <div id="app">
