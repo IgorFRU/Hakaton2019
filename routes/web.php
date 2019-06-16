@@ -17,8 +17,18 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => [
     Route::post('/settings/store', 'CoreController@store')->name('dashboard.settings.store');
     Route::post('/settings/destroy', 'CoreController@destroy')->name('dashboard.settings.destroy');
     Route::post('/settings/userdata', 'CoreController@userdata')->name('dashboard.user_data.store');
-    Route::get('/catalog', 'CoreController@catalog')->name('dashboard.catalog');
-    // Route::resource('/manufacture', 'ManufactureController', ['as'=>'admin']);
+    // Route::get('/catalog', 'CoreController@catalog')->name('dashboard.catalog');
+    Route::resource('/catalog', 'GoodController')->names([
+        'index' => 'dashboard.catalog.index'
+    ]);
+    Route::resource('/customers', 'CustomerController')->names([
+        'index' => 'dashboard.customer.index',
+        'create' => 'dashboard.customer.create',
+        'store' => 'dashboard.customer.store'
+    ]);
+    Route::resource('/adresses', 'AddressController')->names([
+        'index' => 'dashboard.address.index'
+    ]);
     // Route::resource('/currency', 'CurrencyController', ['as'=>'admin']);
     // Route::resource('/unit', 'UnitController', ['as'=>'admin']);
     // Route::resource('/rebate', 'RebateController', ['as'=>'admin']);

@@ -11,13 +11,17 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/babcd2c5a2.js"></script>
+    <script src="https://use.fontawesome.com/564e0d687f.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">    
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
     <div id="app">
@@ -29,8 +33,14 @@
                 <a class="navbar-brand" href="{{ route('dashboard') }}">
                     Главная
                 </a>
-                <a class="navbar-brand" href="{{ route('dashboard.catalog') }}">
+                <a class="navbar-brand" href="{{ route('dashboard.catalog.index') }}">
                     Каталог
+                </a>
+                <a class="navbar-brand" href="{{ route('dashboard.customer.index') }}">
+                    Покупатели
+                </a>
+                <a class="navbar-brand" href="#">
+                    Заказы
                 </a>
                 <a class="navbar-brand" href="{{ route('dashboard.settings') }}">Настройки</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
