@@ -75,7 +75,24 @@
 
         <div class="head_first">
             <div class="wrap">
-
+                <div class="flex_row sapce_between">
+                    <div class="logo flex_row">
+                        <img src="{{asset('images/logo.svg')}}" class="head_first__logo">
+                        <div class="logo__title">
+                            <span class="logo__title__main">КОНСОЛИДАТОР</span>
+                            <span class="logo__title__sub">сервис управления торговлей</span>
+                        </div>
+                    </div>
+                    <div class="head_first__right flex_row">
+                        <div class="head_first__phone">
+                            8 800 123 12 11
+                        </div>
+                        <span><a href="#">О компании</a></span>
+                        <div class="head_first__register button border_only border_orange">
+                            <a href="#">Регистрация</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -91,5 +108,8 @@
             @yield('content')
         </main>
     </div>
+    <footer>
+        @include('layouts.footer')
+    </footer>
 </body>
 </html>
