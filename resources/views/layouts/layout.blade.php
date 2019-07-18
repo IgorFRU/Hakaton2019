@@ -75,7 +75,7 @@
 
         <div class="head_first">
             <div class="wrap">
-                <div class="flex_row sapce_between">
+                <div class="flex_row space_between">
                     <div class="logo flex_row">
                         <img src="{{asset('images/logo.svg')}}" class="head_first__logo">
                         <div class="logo__title">
@@ -104,7 +104,7 @@
             <img src="{{asset('images/head_second__vector.svg')}}" class="head_second__vector">
             <img src="{{asset('images/head_second__group.svg')}}" class="head_second__group">
         </div>
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

@@ -1,5 +1,5 @@
 <div class="wrap">
-    <div class="footer__items flex_row sapce_between">
+    <div class="footer__items flex_row space_between">
         <div class="footer__item1 flex_column">
             <p><a href="#">Вопросы и ответы</a></p>
             <p><a href="#">Как оформить заказ</a></p>
@@ -14,13 +14,13 @@
             <div class="social_buttons flex_column">
                 <div class="flex_row">
                     <div class="social_button flex_row">
-                        <div class="social_button__img"></div>
+                        <div class="social_button__img"><img src="{{asset('images/fb_logo.svg')}}" class=""></div>
                         <div>
                             <a href="#">facebook</a>
                         </div>
                     </div>
                     <div class="social_button flex_row">
-                        <div class="social_button__img"></div>
+                        <div class="social_button__img"><img src="{{asset('images/vk_logo.svg')}}" class=""></div>
                         <div>
                             <a href="#">Вконтакте</a>
                         </div>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="social_button flex_row">
-                        <div class="social_button__img"></div>
+                        <div class="social_button__img"><img src="{{asset('images/odnoklassniki-logo.svg')}}" class=""></div>
                         <div>
                             <a href="#">Одноклассники</a>
                         </div>

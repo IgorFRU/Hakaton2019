@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,6 +69,24 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+<form action="" class="login_form white_box">
+    <div class="form_content">
+        <div class="input_group">
+            <div class="input_group__title">Логин или номер телефона</div>
+            <input type="text" name="login" id="" class="input_group__input">
+        </div>
+        <div class="input_group">
+            <div class="input_group__title">Пароль</div>
+            <input type="password" name="password" id="" class="input_group__input">
+        </div>
+        <a href="#" class="forgot_password_link">Забыли пароль?</a>
+        <div class="login_form__buttons flex_row space_between">
+        <input class="login_form__login button bg_yellow no_border" type="submit" value="Войти">
+        <div class="login_form__register button border_only border_orange"><a href="#">Зарегистрироваться</a></div>
+        </div>
+    </div>
+    
+</form>
 @endsection
 

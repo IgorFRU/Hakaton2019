@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function () {
+    $data = array(
+        'title' => 'Консолидатор. Главная страница'
+    );
+    return view('mainpage', $data);
+});
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => ['auth']], function(){
     Route::get('/', 'CoreController@index')->name('dashboard');
     Route::get('/settings', 'CoreController@settings')->name('dashboard.settings');
@@ -47,9 +52,9 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => [
     
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
