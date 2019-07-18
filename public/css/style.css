@@ -110,6 +110,12 @@
     font-style: italic;
 }
 
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -245,6 +251,19 @@ body {
 
 .button {
     border-radius: 8px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.13px;
+    color: #ffffff;
+    height: 42px;
+    padding: 0 30px;
+    cursor: pointer;
+    line-height: 42px;
+    text-align: center;
 }
 
 .no_border {
@@ -253,6 +272,7 @@ body {
 
 .border_orange {
     border: solid 1px #ffa726;
+    color: #ffa726;
 }
 
 .bg_orange {
@@ -422,10 +442,58 @@ main {
 }
 
 sidebar {
-    margin-right: 20px;
+    /* margin-right: 20px; */
     width: 304px;
     position: absolute;
     padding: 19px 28px;
+    /* margin-top: 16px; */
+}
+
+sidebar input[type=checkbox] {
+	display: none;
+}
+
+sidebar  label {
+    margin-left: 35px;
+    position: relative;
+}
+
+sidebar input[type=checkbox] + label::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: #fbbf43;
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 3px;
+}
+
+sidebar input[type=checkbox]:checked + label::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: url(/images/check_box_checked.svg);
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+sidebar a {
+    font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.14px;
+  color: #323c47;
+}
+
+sidebar .buttons {
+    height: 115px;
 }
 
 .filter_group {
@@ -463,6 +531,47 @@ select {
     line-height: normal;
     letter-spacing: 0.14px;
     color: #323c47;
+}
+
+.filter_item__tree {
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+}
+
+.filter_item__tree:last-child {
+    margin: 0;
+}
+
+.filter_item__tree:last-child::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2053f3;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+}
+
+section.content {
+    margin-top: 16px;
+    margin-left: 324px;
+}
+
+section.content .top_search {
+    border: none;
+    height: 60px;
+    margin-bottom: 29px;
+}
+
+.top_search input {
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding-left: 68px;
 }
 
 footer {
